@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zalando Georgia Proposal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    select {
+      padding: 5px;
+    }
+    .content {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 data-en="Zalando Georgia Proposal" data-ka="ზალანდოს საქართველოს პროექტი">Zalando Georgia Proposal</h1>
+    <select id="languageSwitcher">
+      <option value="en">English</option>
+      <option value="ka">Georgian</option>
+    </select>
+  </header>
+
+  <div class="content">
+    <p data-en="This proposal outlines the creation of a Zalando subsidiary in Georgia to enter a growing digital market in the South Caucasus." 
+       data-ka="ეს წინადადება მოიცავს ზალანდოს შვილობილი კომპანიის შექმნას საქართველოში, რათა შევიდეს მზარდ ციფრულ ბაზარზე სამხრეთ კავკასიაში.">
+      This proposal outlines the creation of a Zalando subsidiary in Georgia to enter a growing digital market in the South Caucasus.
+    </p>
+    <p data-en="The company would be legally registered as a wholly-owned LLC and operated entirely by Zalando SE." 
+       data-ka="კომპანია იურიდიულად დარეგისტრირდება როგორც 100%-იანი შვილობილი შპს და სრულად იმართება Zalando SE-ის მიერ.">
+      The company would be legally registered as a wholly-owned LLC and operated entirely by Zalando SE.
+    </p>
+  </div>
+
+  <script>
+    const switcher = document.getElementById('languageSwitcher');
+    const translatables = document.querySelectorAll('[data-en]');
+
+    switcher.addEventListener('change', () => {
+      const lang = switcher.value;
+      translatables.forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    });
+  </script>
+</body>
+</html>
